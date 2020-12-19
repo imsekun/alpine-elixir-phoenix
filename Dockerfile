@@ -1,4 +1,4 @@
-FROM elixir:1.11.2-alpine
+FROM boreddevco/alpine-elixir:1.11.2
 
 MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 
