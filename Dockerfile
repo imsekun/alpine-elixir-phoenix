@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir:1.10.4
+FROM elixir:1.11.2-alpine
 
 MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 
@@ -10,20 +10,20 @@ ENV REFRESHED_AT=2020-09-10
 
 # Install NPM
 RUN \
-    mkdir -p /opt/app && \
-    chmod -R 777 /opt/app && \
-    apk update && \
-    apk --no-cache --update add \
-      make \
-      g++ \
-      wget \
-      curl \
-      inotify-tools \
-      nodejs \
-      nodejs-npm && \
-    npm install npm -g --no-progress && \
-    update-ca-certificates --fresh && \
-    rm -rf /var/cache/apk/*
+  mkdir -p /opt/app && \
+  chmod -R 777 /opt/app && \
+  apk update && \
+  apk --no-cache --update add \
+  make \
+  g++ \
+  wget \
+  curl \
+  inotify-tools \
+  nodejs \
+  nodejs-npm && \
+  npm install npm -g --no-progress && \
+  update-ca-certificates --fresh && \
+  rm -rf /var/cache/apk/*
 
 # Add local node module binaries to PATH
 ENV PATH=./node_modules/.bin:$PATH
