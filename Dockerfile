@@ -1,4 +1,4 @@
-FROM boreddevco/alpine-elixir:1.11.2
+FROM bitwalker/alpine-elixir:1.11.4
 
 MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 
@@ -6,7 +6,7 @@ MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 # is updated with the current date. It will force refresh of all
 # of the base images and things like `apt-get update` won't be using
 # old cached versions when the Dockerfile is built.
-ENV REFRESHED_AT=2020-09-10
+ENV REFRESHED_AT=2021-04-22
 
 # Install NPM
 RUN \
@@ -16,6 +16,7 @@ RUN \
   apk --no-cache --update add \
   make \
   g++ \
+  python3 \
   wget \
   curl \
   inotify-tools \
