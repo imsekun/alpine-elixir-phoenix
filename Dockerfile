@@ -17,6 +17,7 @@ RUN \
   make \
   g++ \
   python3 \
+  python2 \
   wget \
   curl \
   inotify-tools \
